@@ -18,3 +18,26 @@ jobs:
           issue-message: "primer issue"
           # Comment to post on an individual's first pull request
           pr-message: "primer PR"
+      - name: prueba de variables
+        run: echo "mi nombre es ${{ env.nombre }}
+        env:
+          nombre: Martina
+      - shell: bash
+        run: |
+          expr 1 + 2 > output.log
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-log-file
+          path: output.log
+          
+  otro-job:
+    runs-on: ubuntu-latest
+    needs: demo-job
+    steps:
+      - name: download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: output-log-file
+    
+  
