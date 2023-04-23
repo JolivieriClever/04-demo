@@ -9,3 +9,12 @@ jobs:
       - run: echo "evento ${{ github.event_name }}"
       - run: echo "quien es el runner ${{ runner.os }}"
       - run: echo "esta es la branch ${{ github.ref }}"
+      - name: First interaction
+        uses: actions/first-interaction@v1.1.1
+        with:
+          # Token for the repository. Can be passed in using {{ secrets.GITHUB_TOKEN }}
+          repo-token: "pepe-token"
+          # Comment to post on an individual's first issue
+          issue-message: "primer issue"
+          # Comment to post on an individual's first pull request
+          pr-message: "primer PR"
