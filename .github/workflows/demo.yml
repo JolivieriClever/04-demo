@@ -19,7 +19,7 @@ jobs:
           # Comment to post on an individual's first pull request
           pr-message: "primer PR"
       - name: prueba de variables
-        run: echo "nombre es ${{ env }}"
+        run: echo "nombre es ${{ nombre }}"
         env: 
           nombre: Martina
           
