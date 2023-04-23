@@ -7,5 +7,5 @@ jobs:
     steps:
       - run: echo "prueba de la primera linea"
       - run: echo "evento ${{ github.event_name }}"
-      - run: echo "quien es el runner ${{ runner.os }}""
+      - run: echo "quien es el runner ${{ runner.os }}"
       - run: echo "esta es la branch ${{ github.ref }}"
